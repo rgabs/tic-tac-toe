@@ -15,7 +15,7 @@ const getUpdatedCells = (oldState, rowID, cellIndex, isXNext) => {
   const updatedRow = {id: rowID, items};
   const newBoxData = replaceIndex(oldState, selectedRowIndex, updatedRow);
   return newBoxData;
-}
+};
 
 const getWinner = (boxState) => {
   const MATCHING_POSITIONS = [
@@ -40,7 +40,7 @@ const getWinner = (boxState) => {
   return winner;
 };
 
-function Box() {
+function Box () {
   const initialState =  {
     boxData: [
       {'items': ['', '', ''], 'id': uuid()},
@@ -49,7 +49,7 @@ function Box() {
     ],
     isXNext: true
   };
-  const [state, setState ] = useState(initialState);
+  const [state, setState] = useState(initialState);
   const reset = () => setState(initialState);
   
   const cellclickHandler = (rowID, cellIndex) => () => {
@@ -62,15 +62,12 @@ function Box() {
         swal('Congratulations!', `Player ${winner} is the winner`, 'success').then(reset);
       }
     }
-  }
-
-  const createRow = (rowData) => <Row cellData={rowData.items}
-    key={rowData.id} rowID={rowData.id} cellclickHandler={cellclickHandler} />
+  };
 
   return (
-    <div className='box'>{state.boxData.map(createRow)}</div>
+    <div className='box'>{state.boxData.map((rowData) => <Row cellData={rowData.items}
+    key={rowData.id} rowID={rowData.id} cellclickHandler={cellclickHandler} />)}</div>
   );
-  
 }
 
 export default Box;
