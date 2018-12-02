@@ -62,7 +62,7 @@
            "quotes": ["error", "single"],
            "no-console": 0,
            "padded-blocks": ["error", "never"],
-           "react/no-did-mount-set-state": 2,
+           "react/no-did-mount-set-state": 2
     },
     "globals": {
         "it" : true,
@@ -70,5 +70,6 @@
         "expect" :true,
         "test":true
     },
-    "plugins": ["react","sort-imports-es6-autofix"],"extends": ["eslint:recommended", "plugin:react/recommended"]
+    "plugins": ["react","sort-imports-es6-autofix"],
+    "extends": ["eslint:recommended", "plugin:react/recommended", "react-app"]
 }
