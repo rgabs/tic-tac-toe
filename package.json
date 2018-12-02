@@ -1,6 +1,7 @@
 {
   "name": "tictactoe",
   "version": "0.1.1",
+  "homepage": "./",
   "private": true,
   "dependencies": {
     "babel-core": "^6.26.3",
