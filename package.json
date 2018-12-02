@@ -1,12 +1,13 @@
 {
   "name": "tictactoe",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
     "eslint-plugin-react": "^7.5.1",
     "eslint-plugin-sort-imports-es6-autofix": "^0.1.1",
+    "gh-pages": "^2.0.1",
     "react": "16.7.0-alpha.0",
     "react-dom": "16.7.0-alpha.0",
     "replace-array-index": "^0.0.1",
@@ -21,7 +22,9 @@
     "lint:fix": "eslint --fix ./src/**/*.js",
     "test:watch": "jest --watchAll",
     "test:update": "jest --updateSnapshot",
+    "predeploy": "npm run build",
     "prepush": "npm run test",
+    "deploy": "gh-pages -d build",
     "postinstall": "rm -rf .git/hooks/pre-push && node node_modules/husky/bin/install.js && rm -rf .git/hooks/pre-commit"
   },
   "devDependencies": {
